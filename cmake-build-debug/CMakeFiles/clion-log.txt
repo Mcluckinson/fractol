@@ -1,0 +1,4 @@
+/Users/cyuriko/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/cyuriko/fractol_to_git
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/cyuriko/fractol_to_git/cmake-build-debug

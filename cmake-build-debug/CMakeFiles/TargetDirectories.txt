@@ -1,0 +1,3 @@
+/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir

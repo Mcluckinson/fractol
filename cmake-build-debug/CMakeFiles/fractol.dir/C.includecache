@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/cyuriko/fractol_to_git/fractol.h
+minilibx_macos/mlx.h
+/Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+libft/libft.h
+/Users/cyuriko/fractol_to_git/libft/libft.h
+math.h
+-
+pthread.h
+-
+OpenCL/opencl.h
+-
+
+/Users/cyuriko/fractol_to_git/libft/get_next_line.h
+libft.h
+/Users/cyuriko/fractol_to_git/libft/libft.h
+
+/Users/cyuriko/fractol_to_git/libft/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+fcntl.h
+-
+stdio.h
+-
+get_next_line.h
+/Users/cyuriko/fractol_to_git/libft/get_next_line.h
+
+/Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+
+/Users/cyuriko/fractol_to_git/test_main.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+

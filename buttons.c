@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 20:26:15 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/09/19 20:27:15 by cyuriko          ###   ########.fr       */
+/*   Created: 2019/09/24 15:00:07 by cyuriko           #+#    #+#             */
+/*   Updated: 2019/09/24 18:19:05 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,31 @@ int             key_press(int key, t_window *window)
 {
 	(key == 53) ? close_window(window) : 0;
 	return (0);
+}
+
+int             mouse_buttons(int key, int x, int y, t_window *window)
+{
+	if (key == 4 || key == 5)
+	{
+		zoom_fix(x, y, key, window);
+		ft_bzero(window->img_data,  MAP_W * UNIQ_BPP * MAP_H);
+		test_mandel(window);
+		draw_thing(window);
+	}
+	return (0);
+}
+
+void		zoom_fix(int x, int y, int key, t_window *window)
+{
+
+	window->x_fix = MAP_W / 2 - x;
+	window->y_fix = MAP_H / 2 - y;
+	if (key == 4)
+		window->zoom_fix += 0.1;
+	else
+	{
+		if (window->zoom_fix > 0.2)
+			window->zoom_fix -= 0.1;
+	}
+
 }

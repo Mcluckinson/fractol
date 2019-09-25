@@ -80,6 +80,7 @@ add_executable(fractol
         test_main.c)
 target_link_libraries(fractol
         "-framework AppKit"
+        "-framework OpenCL"
         "-framework OpenGL"
         mlx
         )

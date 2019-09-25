@@ -7,7 +7,7 @@ OBJ = $(patsubst %.c,%.o,$(SOURCE))
 
 
 LIB = -L libft -lft
-OGK = -framework OpenGL
+OGK = -framework OpenGL -framework OpenCL
 APK = -framework AppKit
 LMX = -lmlx
 

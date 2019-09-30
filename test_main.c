@@ -36,7 +36,6 @@ t_complex init_complex(double re, double im)
 
 /*void			test_mandel(t_window *window)
 {
-	t_complex	z;
 	double	min_re = -3.6;
 	double	max_re = 3.7;
 	double	min_im = -2.0;
@@ -53,12 +52,10 @@ t_complex init_complex(double re, double im)
 
 	while (y < MAP_H)
 	{
-		window->real_y = (y - window->y_fix) * window->zoom_fix;
 		c_im = max_im - y * factor_im;
 		x = 0;
 		while (x < MAP_W)
 		{
-			window->real_x = (x - window->x_fix) * window->zoom_fix;
 			c_re = min_re + x * factor_re;
 			z = init_complex(c_re, c_im);
 			iteration = 0;

@@ -23,8 +23,8 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     while (pow(z_re, 2.0) + pow(z_im, 2.0) <= 4 && iteration < max_iteration)
     	{
     	    double tmp = z_re;
-    		z_re = (pow(z_re, 2.0) - pow(z_im, 2.0)) + c_re;
-    		z_im = -2.0 * fabs(tmp * z_im) + c_im;
+    		z_re = fabs(pow(z_re, 2.0) - pow(z_im, 2.0)) + c_re;
+    		z_im = 2.0 * tmp * z_im + c_im;
     		iteration++;
     	}// Формула множества Мандельброта
     t = (double)iteration / (double)max_iteration;

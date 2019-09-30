@@ -90,6 +90,9 @@
 		<Unit filename="/Users/cyuriko/fractol_to_git/fractol.h">
 			<Option target="fractol"/>
 		</Unit>
+		<Unit filename="/Users/cyuriko/fractol_to_git/init_cl1.c">
+			<Option target="fractol"/>
+		</Unit>
 		<Unit filename="/Users/cyuriko/fractol_to_git/libft/ft_atoi.c">
 			<Option target="fractol"/>
 		</Unit>

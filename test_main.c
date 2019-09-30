@@ -34,7 +34,7 @@ t_complex init_complex(double re, double im)
 	return (complex);
 }
 
-void			test_mandel(t_window *window)
+/*void			test_mandel(t_window *window)
 {
 	t_complex	z;
 	double	min_re = -3.6;
@@ -76,9 +76,9 @@ void			test_mandel(t_window *window)
 		}
 		y++;
 	}
-}
+}*/
 
-void	put_point(int x, int y, t_window *window, int iteration)
+/*void	put_point(int x, int y, t_window *window, int iteration)
 {
 	int i;
 	i = (y * *window->linesize) + x * UNIQ_BPP;
@@ -99,117 +99,34 @@ void	get_color(int iteration, int i, t_window *window)
 	window->img_data[i] = blue;
 	window->img_data[++i] = green;
 	window->img_data[++i] = red;
-}
+}*/
 
 void	draw_thing(t_window *window)
 {
 mlx_put_image_to_window(window->mlx_ptr, window->win_ptr, window->img_ptr, 0, 0);
 }
 
-# define CHECK_ERROR { if (ret != CL_SUCCESS) exit(ret);}
+//# define CHECK_ERROR { if (ret != CL_SUCCESS) exit(ret);}
 
-char *read_file(char *path) {
-	char * buffer = 0;
-	long length;
-	FILE * f = fopen (path, "rb");
 
-	printf("Hi\n");
-	if (f)
-	{
-		fseek (f, 0, SEEK_END);
-		length = ftell (f);
-		fseek (f, 0, SEEK_SET);
-		buffer = malloc (length);
-		printf("Hi 2\n");
-		if (buffer)
-		{
-			fread (buffer, 1, length, f);
-		}
-		fclose (f);
-	}
-	return (buffer);
-}
 
 int	main(/*int argc, char **argv*/)
 {
-	t_window *window;
+	t_window	*window;
+	t_graphon	*graphon;
 
 	window = init_window();
+	graphon = (t_graphon*)ft_memalloc(sizeof(t_graphon));
+	start_cl(graphon, window);
 
-//	test_mandel(window);
-	int ret;
-	cl_platform_id platform_id;
-	cl_uint num_platforms;
-	ret = clGetPlatformIDs(1, &platform_id, &num_platforms);//////Хуевина типа MLX pointer забей хуй
-	CHECK_ERROR /////макрос наверху замени по нормам
-	cl_device_id device_id; ////это будет айди видюхи
-	cl_uint num_devices;
-	ret = clGetDeviceIDs(platform_id, CL_DEVICE_TYPE_GPU, 1, &device_id, &num_devices);////цепляем айди видюхи в девайс айди
-	CHECK_ERROR
 
-	cl_context context = clCreateContext(NULL, 1, &device_id, NULL, NULL, &ret);////какой-то ебучий контекст в котором будет лежать кернел и всякая хуйня
-	CHECK_ERROR
-
-	cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &ret);////очередь команд, см млх хуеинтер
-	CHECK_ERROR
-
-	char *program_string; /////строка с кодом кернела
-	program_string = read_file("/Users/cyuriko/fractol_to_git/test.cl");/////собсна читаем код кернела кладем в эту строку
-	size_t len = strlen(program_string);
-	cl_program program = clCreateProgramWithSource(context, 1, (const char**)&program_string, &len, &ret);/////эта хуйня инициализирует эту программу, поговаривают, что собирает бинарник но хуй пойми. хочет стрлен (см выше)
-	CHECK_ERROR
-
-	ret = clBuildProgram(program, 1, &device_id, NULL, NULL, NULL);/////вот эта хуйня компилирует то что выше вот там блядь посмотри
-	if (ret != CL_SUCCESS)//////эта хуйня выведет ошибку если в кернеле написано говно, попробуй написать хуйню в тест.сл
-	{
-		size_t log_size;
-		clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
-		char *log = calloc(log_size + 1, sizeof(char));
-		clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
-		printf("%s\n", log);
-	}
-	CHECK_ERROR
-
-	cl_kernel kernel = clCreateKernel(program, "test", &ret);/////инициализация кернела с написанным кодом (читни про эту хуйню еще)
-	CHECK_ERROR
-
-	char color[3] = {0xf0, 0x30, 0xa0};
-	cl_mem image_mem;/////сл мем это поинтер на слвскую память
-	cl_mem color_mem;
-	color_mem = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(char) * 3, NULL, &ret);///слевский маллок
-	CHECK_ERROR
-	image_mem = clCreateBuffer(context, CL_MEM_WRITE_ONLY, MAP_W * MAP_H * sizeof(int), NULL, &ret);
-	CHECK_ERROR
-	ret = clEnqueueWriteBuffer(command_queue, color_mem, CL_TRUE, 0, sizeof(char) * 3, color, 0, NULL, NULL);////запись с процессора на видопамять
-	CHECK_ERROR
-	ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), &color_mem);/////установка аргументов которые потом подашь в кернел
-	CHECK_ERROR
-	ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &image_mem);
-	CHECK_ERROR
-	int a = 20;
-	ret = clSetKernelArg(kernel, 2, sizeof(int), &a);
-
-	size_t work_size = MAP_H * MAP_W;
-	ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, &work_size, NULL, 0, NULL, NULL);//////запуск кернела, ворк сайз кернелов запустит хоть миллион блядь
-	CHECK_ERROR
-
-	int *my_image = malloc(sizeof(int) * MAP_H * MAP_W);
-	ret = clEnqueueReadBuffer(command_queue, image_mem, CL_TRUE, 0, sizeof(int) * MAP_H * MAP_W, my_image, 0, NULL, NULL);///////чтение с картинки которая теперь в видеопамяти
-	CHECK_ERROR
-
-	printf("Start drawing!\n");
-	for (int y = 0; y < MAP_H; y++) {
-		for (int x = 0; x < MAP_W; x++) {
-			mlx_pixel_put(window->mlx_ptr, window->win_ptr, x, y, my_image[x + y * MAP_W]);
-		}
-	}
 
 
 
 
 //	draw_thing(window);
-//	mlx_hook(window->win_ptr, 17, 1L << 17, close_window, window);
-//	mlx_hook(window->win_ptr, 2, 1L << 0, key_press, window);
+	mlx_hook(window->win_ptr, 17, 1L << 17, close_window, window);
+	mlx_hook(window->win_ptr, 2, 1L << 0, key_press, window);
 //	mlx_hook(window->win_ptr, 4, 1L << 2, mouse_buttons, window);
 	mlx_loop(window->mlx_ptr);
 

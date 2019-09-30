@@ -1,10 +1,8 @@
 NAME = fractol
 
-SOURCE = test_main.c buttons.c
-
+SOURCE = test_main.c buttons.c init_cl1.c
 
 OBJ = $(patsubst %.c,%.o,$(SOURCE))
-
 
 LIB = -L libft -lft
 OGK = -framework OpenGL -framework OpenCL

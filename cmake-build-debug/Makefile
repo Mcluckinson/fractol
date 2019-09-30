@@ -150,6 +150,33 @@ buttons.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/buttons.c.s
 .PHONY : buttons.c.s
 
+init_cl1.o: init_cl1.c.o
+
+.PHONY : init_cl1.o
+
+# target to build an object file
+init_cl1.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.o
+.PHONY : init_cl1.c.o
+
+init_cl1.i: init_cl1.c.i
+
+.PHONY : init_cl1.i
+
+# target to preprocess a source file
+init_cl1.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.i
+.PHONY : init_cl1.c.i
+
+init_cl1.s: init_cl1.c.s
+
+.PHONY : init_cl1.s
+
+# target to generate assembly for a file
+init_cl1.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.s
+.PHONY : init_cl1.c.s
+
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
 .PHONY : libft/ft_atoi.o
@@ -1971,6 +1998,9 @@ help:
 	@echo "... buttons.o"
 	@echo "... buttons.i"
 	@echo "... buttons.s"
+	@echo "... init_cl1.o"
+	@echo "... init_cl1.i"
+	@echo "... init_cl1.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

@@ -18,6 +18,10 @@ pthread.h
 OpenCL/opencl.h
 -
 
+/Users/cyuriko/fractol_to_git/init_cl1.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
 /Users/cyuriko/fractol_to_git/libft/get_next_line.h
 libft.h
 /Users/cyuriko/fractol_to_git/libft/libft.h
@@ -37,8 +41,4 @@ get_next_line.h
 /Users/cyuriko/fractol_to_git/libft/get_next_line.h
 
 /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
-
-/Users/cyuriko/fractol_to_git/test_main.c
-fractol.h
-/Users/cyuriko/fractol_to_git/fractol.h
 

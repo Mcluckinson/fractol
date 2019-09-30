@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/cyuriko/fractol_to_git/buttons.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/buttons.c.o"
+  "/Users/cyuriko/fractol_to_git/init_cl1.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/init_cl1.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_atoi.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_atoi.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_bzero.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_bzero.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_delarr.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_delarr.c.o"

@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:00:07 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/09/24 18:19:05 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/09/29 17:13:07 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,20 @@ int             key_press(int key, t_window *window)
 	return (0);
 }
 
-int             mouse_buttons(int key, int x, int y, t_window *window)
+/*int             mouse_buttons(int key, int x, int y, t_window *window)
 {
 	if (key == 4 || key == 5)
 	{
 		zoom_fix(x, y, key, window);
 		ft_bzero(window->img_data,  MAP_W * UNIQ_BPP * MAP_H);
-		test_mandel(window);
+		clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, &work_size, NULL, 0, NULL, NULL);
+//		test_mandel(window);
 		draw_thing(window);
 	}
 	return (0);
-}
+}*/
 
-void		zoom_fix(int x, int y, int key, t_window *window)
+/*void		zoom_fix(int x, int y, int key, t_window *window)
 {
 
 	window->x_fix = MAP_W / 2 - x;
@@ -69,4 +70,4 @@ void		zoom_fix(int x, int y, int key, t_window *window)
 			window->zoom_fix -= 0.1;
 	}
 
-}
+}*/

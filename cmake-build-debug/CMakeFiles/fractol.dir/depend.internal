@@ -7,6 +7,12 @@ CMakeFiles/fractol.dir/buttons.c.o
  /Users/cyuriko/fractol_to_git/libft/get_next_line.h
  /Users/cyuriko/fractol_to_git/libft/libft.h
  /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/init_cl1.c.o
+ /Users/cyuriko/fractol_to_git/fractol.h
+ /Users/cyuriko/fractol_to_git/init_cl1.c
+ /Users/cyuriko/fractol_to_git/libft/get_next_line.h
+ /Users/cyuriko/fractol_to_git/libft/libft.h
+ /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o
  /Users/cyuriko/fractol_to_git/libft/ft_atoi.c
  /Users/cyuriko/fractol_to_git/libft/get_next_line.h

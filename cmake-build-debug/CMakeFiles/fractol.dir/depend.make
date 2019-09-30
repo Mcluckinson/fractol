@@ -7,6 +7,12 @@ CMakeFiles/fractol.dir/buttons.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/buttons.c.o: ../libft/libft.h
 CMakeFiles/fractol.dir/buttons.c.o: ../minilibx_macos/mlx.h
 
+CMakeFiles/fractol.dir/init_cl1.c.o: ../fractol.h
+CMakeFiles/fractol.dir/init_cl1.c.o: ../init_cl1.c
+CMakeFiles/fractol.dir/init_cl1.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/init_cl1.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/init_cl1.c.o: ../minilibx_macos/mlx.h
+
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o: ../libft/libft.h

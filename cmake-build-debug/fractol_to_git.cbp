@@ -90,7 +90,13 @@
 		<Unit filename="/Users/cyuriko/fractol_to_git/fractol.h">
 			<Option target="fractol"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/fractol_to_git/init_cl1.c">
+		<Unit filename="/Users/cyuriko/fractol_to_git/go_mandelbrot.c">
+			<Option target="fractol"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/fractol_to_git/init_cl.c">
+			<Option target="fractol"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/fractol_to_git/init_data.c">
 			<Option target="fractol"/>
 		</Unit>
 		<Unit filename="/Users/cyuriko/fractol_to_git/libft/ft_atoi.c">
@@ -297,7 +303,10 @@
 		<Unit filename="/Users/cyuriko/fractol_to_git/libft/libft.h">
 			<Option target="fractol"/>
 		</Unit>
-		<Unit filename="/Users/cyuriko/fractol_to_git/test_main.c">
+		<Unit filename="/Users/cyuriko/fractol_to_git/main.c">
+			<Option target="fractol"/>
+		</Unit>
+		<Unit filename="/Users/cyuriko/fractol_to_git/service.c">
 			<Option target="fractol"/>
 		</Unit>
 		<Unit filename="/Users/cyuriko/fractol_to_git/CMakeLists.txt">

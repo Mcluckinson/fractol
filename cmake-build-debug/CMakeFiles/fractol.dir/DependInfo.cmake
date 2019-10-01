@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/cyuriko/fractol_to_git/buttons.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/buttons.c.o"
-  "/Users/cyuriko/fractol_to_git/init_cl1.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/init_cl1.c.o"
+  "/Users/cyuriko/fractol_to_git/go_mandelbrot.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/go_mandelbrot.c.o"
+  "/Users/cyuriko/fractol_to_git/init_cl.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/init_cl.c.o"
+  "/Users/cyuriko/fractol_to_git/init_data.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/init_data.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_atoi.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_atoi.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_bzero.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_bzero.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_delarr.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_delarr.c.o"
@@ -72,7 +74,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cyuriko/fractol_to_git/libft/ft_tolower.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_tolower.c.o"
   "/Users/cyuriko/fractol_to_git/libft/ft_toupper.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/ft_toupper.c.o"
   "/Users/cyuriko/fractol_to_git/libft/get_next_line.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/libft/get_next_line.c.o"
-  "/Users/cyuriko/fractol_to_git/test_main.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/test_main.c.o"
+  "/Users/cyuriko/fractol_to_git/main.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/main.c.o"
+  "/Users/cyuriko/fractol_to_git/service.c" "/Users/cyuriko/fractol_to_git/cmake-build-debug/CMakeFiles/fractol.dir/service.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

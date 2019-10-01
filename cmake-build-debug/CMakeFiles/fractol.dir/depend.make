@@ -7,11 +7,23 @@ CMakeFiles/fractol.dir/buttons.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/buttons.c.o: ../libft/libft.h
 CMakeFiles/fractol.dir/buttons.c.o: ../minilibx_macos/mlx.h
 
-CMakeFiles/fractol.dir/init_cl1.c.o: ../fractol.h
-CMakeFiles/fractol.dir/init_cl1.c.o: ../init_cl1.c
-CMakeFiles/fractol.dir/init_cl1.c.o: ../libft/get_next_line.h
-CMakeFiles/fractol.dir/init_cl1.c.o: ../libft/libft.h
-CMakeFiles/fractol.dir/init_cl1.c.o: ../minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../fractol.h
+CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../go_mandelbrot.c
+CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../minilibx_macos/mlx.h
+
+CMakeFiles/fractol.dir/init_cl.c.o: ../fractol.h
+CMakeFiles/fractol.dir/init_cl.c.o: ../init_cl.c
+CMakeFiles/fractol.dir/init_cl.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/init_cl.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/init_cl.c.o: ../minilibx_macos/mlx.h
+
+CMakeFiles/fractol.dir/init_data.c.o: ../fractol.h
+CMakeFiles/fractol.dir/init_data.c.o: ../init_data.c
+CMakeFiles/fractol.dir/init_data.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/init_data.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/init_data.c.o: ../minilibx_macos/mlx.h
 
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/fractol.dir/libft/ft_atoi.c.o: ../libft/get_next_line.h
@@ -277,9 +289,15 @@ CMakeFiles/fractol.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/fractol.dir/libft/get_next_line.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/libft/get_next_line.c.o: ../libft/libft.h
 
-CMakeFiles/fractol.dir/test_main.c.o: ../fractol.h
-CMakeFiles/fractol.dir/test_main.c.o: ../libft/get_next_line.h
-CMakeFiles/fractol.dir/test_main.c.o: ../libft/libft.h
-CMakeFiles/fractol.dir/test_main.c.o: ../minilibx_macos/mlx.h
-CMakeFiles/fractol.dir/test_main.c.o: ../test_main.c
+CMakeFiles/fractol.dir/main.c.o: ../fractol.h
+CMakeFiles/fractol.dir/main.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/main.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/main.c.o: ../main.c
+CMakeFiles/fractol.dir/main.c.o: ../minilibx_macos/mlx.h
+
+CMakeFiles/fractol.dir/service.c.o: ../fractol.h
+CMakeFiles/fractol.dir/service.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/service.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/service.c.o: ../minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/service.c.o: ../service.c
 

@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:09:34 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/09/29 17:33:34 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/01 17:31:27 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,16 @@ typedef struct 		s_window
 	int 			real_y;
 }					t_window;
 
-typedef struct 		s_complex
+typedef struct 		s_fractol
 {
-	double			re;
-	double			im;
-}					t_complex;
+	double min_re;/////////min_re
+	double max_re;;////////max_re
+	double min_im;////////min_im
+	double	max_im;////////max_im
+	double factor_re;////////factor_re/////////ЭТО ЗУМ БЛЯ
+	double factor_im;////////factor_im/////////И ЭТО
+}					t_fractol;
 
-typedef struct 		s_params
-{
-
-}					t_params;
-
-//void	get_color(int iteration, int i, t_window *window);
-//void	put_point(int x, int y, t_window *window, int iteration);
-//void			test_mandel(t_window *window);
-t_complex init_complex(double re, double im);
 t_window		*init_window();
 void	draw_thing(t_window *window);
 int             close_window(t_window *window);
@@ -79,7 +74,14 @@ void			del_win(t_window *window);
 int             key_press(int key, t_window *window);
 //void		zoom_fix(int x, int y, int key, t_window *window);
 //int             mouse_buttons(int key, int x, int y, t_window *window);
-void	start_cl(t_graphon *graphon, t_window *window);
-//void	go_cl(t_graphon *graphon);
+void	start_cl(t_graphon *graphon/*, t_window *window*/);
+void 	error(int ret);
+char *read_file(char *path);
+t_fractol		*init_data();
+void	error_log(t_graphon *graphon);
+void	go_mandelbrot(t_window *window, t_graphon *graphon, t_fractol *fractol);
+void	go_mandelbar(t_window *window, t_graphon *graphon, t_fractol *fractol);
+void	go_julia(t_window *window, t_graphon *graphon, t_fractol *fractol);
+void	go_ship(t_window *window, t_graphon *graphon, t_fractol *fractol);
 
 #endif

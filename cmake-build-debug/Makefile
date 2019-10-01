@@ -150,32 +150,86 @@ buttons.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/buttons.c.s
 .PHONY : buttons.c.s
 
-init_cl1.o: init_cl1.c.o
+go_mandelbrot.o: go_mandelbrot.c.o
 
-.PHONY : init_cl1.o
+.PHONY : go_mandelbrot.o
 
 # target to build an object file
-init_cl1.c.o:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.o
-.PHONY : init_cl1.c.o
+go_mandelbrot.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbrot.c.o
+.PHONY : go_mandelbrot.c.o
 
-init_cl1.i: init_cl1.c.i
+go_mandelbrot.i: go_mandelbrot.c.i
 
-.PHONY : init_cl1.i
+.PHONY : go_mandelbrot.i
 
 # target to preprocess a source file
-init_cl1.c.i:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.i
-.PHONY : init_cl1.c.i
+go_mandelbrot.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbrot.c.i
+.PHONY : go_mandelbrot.c.i
 
-init_cl1.s: init_cl1.c.s
+go_mandelbrot.s: go_mandelbrot.c.s
 
-.PHONY : init_cl1.s
+.PHONY : go_mandelbrot.s
 
 # target to generate assembly for a file
-init_cl1.c.s:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl1.c.s
-.PHONY : init_cl1.c.s
+go_mandelbrot.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbrot.c.s
+.PHONY : go_mandelbrot.c.s
+
+init_cl.o: init_cl.c.o
+
+.PHONY : init_cl.o
+
+# target to build an object file
+init_cl.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl.c.o
+.PHONY : init_cl.c.o
+
+init_cl.i: init_cl.c.i
+
+.PHONY : init_cl.i
+
+# target to preprocess a source file
+init_cl.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl.c.i
+.PHONY : init_cl.c.i
+
+init_cl.s: init_cl.c.s
+
+.PHONY : init_cl.s
+
+# target to generate assembly for a file
+init_cl.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_cl.c.s
+.PHONY : init_cl.c.s
+
+init_data.o: init_data.c.o
+
+.PHONY : init_data.o
+
+# target to build an object file
+init_data.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_data.c.o
+.PHONY : init_data.c.o
+
+init_data.i: init_data.c.i
+
+.PHONY : init_data.i
+
+# target to preprocess a source file
+init_data.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_data.c.i
+.PHONY : init_data.c.i
+
+init_data.s: init_data.c.s
+
+.PHONY : init_data.s
+
+# target to generate assembly for a file
+init_data.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/init_data.c.s
+.PHONY : init_data.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -1959,32 +2013,59 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
-test_main.o: test_main.c.o
+main.o: main.c.o
 
-.PHONY : test_main.o
+.PHONY : main.o
 
 # target to build an object file
-test_main.c.o:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/test_main.c.o
-.PHONY : test_main.c.o
+main.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/main.c.o
+.PHONY : main.c.o
 
-test_main.i: test_main.c.i
+main.i: main.c.i
 
-.PHONY : test_main.i
+.PHONY : main.i
 
 # target to preprocess a source file
-test_main.c.i:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/test_main.c.i
-.PHONY : test_main.c.i
+main.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/main.c.i
+.PHONY : main.c.i
 
-test_main.s: test_main.c.s
+main.s: main.c.s
 
-.PHONY : test_main.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-test_main.c.s:
-	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/test_main.c.s
-.PHONY : test_main.c.s
+main.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/main.c.s
+.PHONY : main.c.s
+
+service.o: service.c.o
+
+.PHONY : service.o
+
+# target to build an object file
+service.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/service.c.o
+.PHONY : service.c.o
+
+service.i: service.c.i
+
+.PHONY : service.i
+
+# target to preprocess a source file
+service.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/service.c.i
+.PHONY : service.c.i
+
+service.s: service.c.s
+
+.PHONY : service.s
+
+# target to generate assembly for a file
+service.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/service.c.s
+.PHONY : service.c.s
 
 # Help Target
 help:
@@ -1998,9 +2079,15 @@ help:
 	@echo "... buttons.o"
 	@echo "... buttons.i"
 	@echo "... buttons.s"
-	@echo "... init_cl1.o"
-	@echo "... init_cl1.i"
-	@echo "... init_cl1.s"
+	@echo "... go_mandelbrot.o"
+	@echo "... go_mandelbrot.i"
+	@echo "... go_mandelbrot.s"
+	@echo "... init_cl.o"
+	@echo "... init_cl.i"
+	@echo "... init_cl.s"
+	@echo "... init_data.o"
+	@echo "... init_data.i"
+	@echo "... init_data.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2199,9 +2286,12 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
-	@echo "... test_main.o"
-	@echo "... test_main.i"
-	@echo "... test_main.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... service.o"
+	@echo "... service.i"
+	@echo "... service.s"
 .PHONY : help
 
 

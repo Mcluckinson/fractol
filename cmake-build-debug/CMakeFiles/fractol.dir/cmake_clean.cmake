@@ -66,8 +66,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/fractol.dir/libft/ft_toupper.c.o"
   "CMakeFiles/fractol.dir/libft/get_next_line.c.o"
   "CMakeFiles/fractol.dir/buttons.c.o"
-  "CMakeFiles/fractol.dir/test_main.c.o"
-  "CMakeFiles/fractol.dir/init_cl1.c.o"
+  "CMakeFiles/fractol.dir/main.c.o"
+  "CMakeFiles/fractol.dir/init_cl.c.o"
+  "CMakeFiles/fractol.dir/service.c.o"
+  "CMakeFiles/fractol.dir/go_mandelbrot.c.o"
+  "CMakeFiles/fractol.dir/init_data.c.o"
   "fractol.pdb"
   "fractol"
 )

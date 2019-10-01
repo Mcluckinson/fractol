@@ -77,8 +77,14 @@ add_executable(fractol
         libft/libft.h
         buttons.c
         fractol.h
-        test_main.c
-        init_cl1.c)
+        main.c
+        init_cl.c
+        service.c
+        go_mandelbrot.c
+        go_julia.c
+        go_mandelbar.c
+        go_ship.c
+        init_data.c)
 target_link_libraries(fractol
         "-framework AppKit"
         "-framework OpenCL"

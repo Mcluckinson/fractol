@@ -7,9 +7,27 @@ CMakeFiles/fractol.dir/buttons.c.o
  /Users/cyuriko/fractol_to_git/libft/get_next_line.h
  /Users/cyuriko/fractol_to_git/libft/libft.h
  /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/go_julia.c.o
+ /Users/cyuriko/fractol_to_git/fractol.h
+ /Users/cyuriko/fractol_to_git/go_julia.c
+ /Users/cyuriko/fractol_to_git/libft/get_next_line.h
+ /Users/cyuriko/fractol_to_git/libft/libft.h
+ /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/go_mandelbar.c.o
+ /Users/cyuriko/fractol_to_git/fractol.h
+ /Users/cyuriko/fractol_to_git/go_mandelbar.c
+ /Users/cyuriko/fractol_to_git/libft/get_next_line.h
+ /Users/cyuriko/fractol_to_git/libft/libft.h
+ /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
 CMakeFiles/fractol.dir/go_mandelbrot.c.o
  /Users/cyuriko/fractol_to_git/fractol.h
  /Users/cyuriko/fractol_to_git/go_mandelbrot.c
+ /Users/cyuriko/fractol_to_git/libft/get_next_line.h
+ /Users/cyuriko/fractol_to_git/libft/libft.h
+ /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/go_ship.c.o
+ /Users/cyuriko/fractol_to_git/fractol.h
+ /Users/cyuriko/fractol_to_git/go_ship.c
  /Users/cyuriko/fractol_to_git/libft/get_next_line.h
  /Users/cyuriko/fractol_to_git/libft/libft.h
  /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
@@ -301,3 +319,9 @@ CMakeFiles/fractol.dir/service.c.o
  /Users/cyuriko/fractol_to_git/libft/libft.h
  /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
  /Users/cyuriko/fractol_to_git/service.c
+CMakeFiles/fractol.dir/zoom.c.o
+ /Users/cyuriko/fractol_to_git/fractol.h
+ /Users/cyuriko/fractol_to_git/libft/get_next_line.h
+ /Users/cyuriko/fractol_to_git/libft/libft.h
+ /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+ /Users/cyuriko/fractol_to_git/zoom.c

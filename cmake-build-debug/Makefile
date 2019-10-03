@@ -123,6 +123,33 @@ fractol/fast:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/build
 .PHONY : fractol/fast
 
+arrows.o: arrows.c.o
+
+.PHONY : arrows.o
+
+# target to build an object file
+arrows.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/arrows.c.o
+.PHONY : arrows.c.o
+
+arrows.i: arrows.c.i
+
+.PHONY : arrows.i
+
+# target to preprocess a source file
+arrows.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/arrows.c.i
+.PHONY : arrows.c.i
+
+arrows.s: arrows.c.s
+
+.PHONY : arrows.s
+
+# target to generate assembly for a file
+arrows.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/arrows.c.s
+.PHONY : arrows.c.s
+
 buttons.o: buttons.c.o
 
 .PHONY : buttons.o
@@ -150,6 +177,60 @@ buttons.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/buttons.c.s
 .PHONY : buttons.c.s
 
+go_julia.o: go_julia.c.o
+
+.PHONY : go_julia.o
+
+# target to build an object file
+go_julia.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_julia.c.o
+.PHONY : go_julia.c.o
+
+go_julia.i: go_julia.c.i
+
+.PHONY : go_julia.i
+
+# target to preprocess a source file
+go_julia.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_julia.c.i
+.PHONY : go_julia.c.i
+
+go_julia.s: go_julia.c.s
+
+.PHONY : go_julia.s
+
+# target to generate assembly for a file
+go_julia.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_julia.c.s
+.PHONY : go_julia.c.s
+
+go_mandelbar.o: go_mandelbar.c.o
+
+.PHONY : go_mandelbar.o
+
+# target to build an object file
+go_mandelbar.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbar.c.o
+.PHONY : go_mandelbar.c.o
+
+go_mandelbar.i: go_mandelbar.c.i
+
+.PHONY : go_mandelbar.i
+
+# target to preprocess a source file
+go_mandelbar.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbar.c.i
+.PHONY : go_mandelbar.c.i
+
+go_mandelbar.s: go_mandelbar.c.s
+
+.PHONY : go_mandelbar.s
+
+# target to generate assembly for a file
+go_mandelbar.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbar.c.s
+.PHONY : go_mandelbar.c.s
+
 go_mandelbrot.o: go_mandelbrot.c.o
 
 .PHONY : go_mandelbrot.o
@@ -176,6 +257,33 @@ go_mandelbrot.s: go_mandelbrot.c.s
 go_mandelbrot.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_mandelbrot.c.s
 .PHONY : go_mandelbrot.c.s
+
+go_ship.o: go_ship.c.o
+
+.PHONY : go_ship.o
+
+# target to build an object file
+go_ship.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_ship.c.o
+.PHONY : go_ship.c.o
+
+go_ship.i: go_ship.c.i
+
+.PHONY : go_ship.i
+
+# target to preprocess a source file
+go_ship.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_ship.c.i
+.PHONY : go_ship.c.i
+
+go_ship.s: go_ship.c.s
+
+.PHONY : go_ship.s
+
+# target to generate assembly for a file
+go_ship.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/go_ship.c.s
+.PHONY : go_ship.c.s
 
 init_cl.o: init_cl.c.o
 
@@ -2067,6 +2175,33 @@ service.c.s:
 	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/service.c.s
 .PHONY : service.c.s
 
+zoom.o: zoom.c.o
+
+.PHONY : zoom.o
+
+# target to build an object file
+zoom.c.o:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/zoom.c.o
+.PHONY : zoom.c.o
+
+zoom.i: zoom.c.i
+
+.PHONY : zoom.i
+
+# target to preprocess a source file
+zoom.c.i:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/zoom.c.i
+.PHONY : zoom.c.i
+
+zoom.s: zoom.c.s
+
+.PHONY : zoom.s
+
+# target to generate assembly for a file
+zoom.c.s:
+	$(MAKE) -f CMakeFiles/fractol.dir/build.make CMakeFiles/fractol.dir/zoom.c.s
+.PHONY : zoom.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2076,12 +2211,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fractol"
+	@echo "... arrows.o"
+	@echo "... arrows.i"
+	@echo "... arrows.s"
 	@echo "... buttons.o"
 	@echo "... buttons.i"
 	@echo "... buttons.s"
+	@echo "... go_julia.o"
+	@echo "... go_julia.i"
+	@echo "... go_julia.s"
+	@echo "... go_mandelbar.o"
+	@echo "... go_mandelbar.i"
+	@echo "... go_mandelbar.s"
 	@echo "... go_mandelbrot.o"
 	@echo "... go_mandelbrot.i"
 	@echo "... go_mandelbrot.s"
+	@echo "... go_ship.o"
+	@echo "... go_ship.i"
+	@echo "... go_ship.s"
 	@echo "... init_cl.o"
 	@echo "... init_cl.i"
 	@echo "... init_cl.s"
@@ -2292,6 +2439,9 @@ help:
 	@echo "... service.o"
 	@echo "... service.i"
 	@echo "... service.s"
+	@echo "... zoom.o"
+	@echo "... zoom.i"
+	@echo "... zoom.s"
 .PHONY : help
 
 

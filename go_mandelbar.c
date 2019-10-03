@@ -57,14 +57,6 @@ static void		run_mandelbar(t_graphon *graphon, t_window *window)
 
 void	go_mandelbar(t_window *window, t_graphon *graphon, t_fractol *fractol)
 {
-//	graphon->ret = clGetPlatformIDs(1, &graphon->platform_id, &graphon->num_platforms);///////////получаем платформы
-//	error(graphon->ret);
-//	graphon->ret = clGetDeviceIDs(graphon->platform_id, CL_DEVICE_TYPE_GPU, 1, &graphon->device_id, &graphon->num_devices); /////////девайс айди для видюхи
-//	error(graphon->ret);
-//	graphon->context = clCreateContext(NULL, 1, &graphon->device_id, NULL, NULL, &graphon->ret);/////////ебучий контекст
-//	error(graphon->ret);
-//	graphon->command_queue = clCreateCommandQueue(graphon->context, graphon->device_id, 0, &graphon->ret);//////////очередь команд бля
-//	error(graphon->ret);
 	graphon->program_string = read_file(
 			"/Users/cyuriko/fractol_to_git/fract_codes/mandelbar.cl");////////////читаем файл с кернелом в програм стринг
 	graphon->program_len = ft_strlen(graphon->program_string);//////////длина програм стринг окей

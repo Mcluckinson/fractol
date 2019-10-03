@@ -36,6 +36,10 @@ static void		init_params_julia(t_graphon *graphon/*, t_window *window*/, t_fract
 	///////////////
 	graphon->ret = clSetKernelArg(graphon->kernel, 7, sizeof(cl_mem), &graphon->img_data);/////////////кернел аргумент 0
 	error(graphon->ret);
+	graphon->ret = clSetKernelArg(graphon->kernel, 8, sizeof(double), &fractol->k_re);
+	error(graphon->ret);
+	graphon->ret = clSetKernelArg(graphon->kernel, 9, sizeof(double), &fractol->k_im);
+	error(graphon->ret);
 
 	//////////////ВСЕ АРГУМЕНТЫ ЗАКОНЧИЛИСЬ
 }

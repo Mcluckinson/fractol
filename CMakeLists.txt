@@ -84,7 +84,9 @@ add_executable(fractol
         go_julia.c
         go_mandelbar.c
         go_ship.c
-        init_data.c)
+        init_data.c
+        zoom.c
+        arrows.c)
 target_link_libraries(fractol
         "-framework AppKit"
         "-framework OpenCL"

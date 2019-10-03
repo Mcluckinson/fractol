@@ -7,11 +7,29 @@ CMakeFiles/fractol.dir/buttons.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/buttons.c.o: ../libft/libft.h
 CMakeFiles/fractol.dir/buttons.c.o: ../minilibx_macos/mlx.h
 
+CMakeFiles/fractol.dir/go_julia.c.o: ../fractol.h
+CMakeFiles/fractol.dir/go_julia.c.o: ../go_julia.c
+CMakeFiles/fractol.dir/go_julia.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/go_julia.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/go_julia.c.o: ../minilibx_macos/mlx.h
+
+CMakeFiles/fractol.dir/go_mandelbar.c.o: ../fractol.h
+CMakeFiles/fractol.dir/go_mandelbar.c.o: ../go_mandelbar.c
+CMakeFiles/fractol.dir/go_mandelbar.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/go_mandelbar.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/go_mandelbar.c.o: ../minilibx_macos/mlx.h
+
 CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../fractol.h
 CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../go_mandelbrot.c
 CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../libft/libft.h
 CMakeFiles/fractol.dir/go_mandelbrot.c.o: ../minilibx_macos/mlx.h
+
+CMakeFiles/fractol.dir/go_ship.c.o: ../fractol.h
+CMakeFiles/fractol.dir/go_ship.c.o: ../go_ship.c
+CMakeFiles/fractol.dir/go_ship.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/go_ship.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/go_ship.c.o: ../minilibx_macos/mlx.h
 
 CMakeFiles/fractol.dir/init_cl.c.o: ../fractol.h
 CMakeFiles/fractol.dir/init_cl.c.o: ../init_cl.c
@@ -300,4 +318,10 @@ CMakeFiles/fractol.dir/service.c.o: ../libft/get_next_line.h
 CMakeFiles/fractol.dir/service.c.o: ../libft/libft.h
 CMakeFiles/fractol.dir/service.c.o: ../minilibx_macos/mlx.h
 CMakeFiles/fractol.dir/service.c.o: ../service.c
+
+CMakeFiles/fractol.dir/zoom.c.o: ../fractol.h
+CMakeFiles/fractol.dir/zoom.c.o: ../libft/get_next_line.h
+CMakeFiles/fractol.dir/zoom.c.o: ../libft/libft.h
+CMakeFiles/fractol.dir/zoom.c.o: ../minilibx_macos/mlx.h
+CMakeFiles/fractol.dir/zoom.c.o: ../zoom.c
 

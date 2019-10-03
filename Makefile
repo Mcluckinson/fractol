@@ -1,6 +1,7 @@
 NAME = fractol
 
-SOURCE = main.c buttons.c init_cl.c init_data.c service.c go_mandelbrot.c go_julia.c go_mandelbar.c go_ship.c
+SOURCE = main.c buttons.c init_cl.c init_data.c service.c go_mandelbrot.c go_julia.c go_mandelbar.c go_ship.c\
+zoom.c arrows.c
 
 OBJ = $(patsubst %.c,%.o,$(SOURCE))
 

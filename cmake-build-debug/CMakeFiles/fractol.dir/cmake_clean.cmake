@@ -70,7 +70,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/fractol.dir/init_cl.c.o"
   "CMakeFiles/fractol.dir/service.c.o"
   "CMakeFiles/fractol.dir/go_mandelbrot.c.o"
+  "CMakeFiles/fractol.dir/go_julia.c.o"
+  "CMakeFiles/fractol.dir/go_mandelbar.c.o"
+  "CMakeFiles/fractol.dir/go_ship.c.o"
   "CMakeFiles/fractol.dir/init_data.c.o"
+  "CMakeFiles/fractol.dir/zoom.c.o"
+  "CMakeFiles/fractol.dir/arrows.c.o"
   "fractol.pdb"
   "fractol"
 )

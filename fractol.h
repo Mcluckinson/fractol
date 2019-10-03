@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:09:34 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/01 17:31:27 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:08:28 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <OpenCL/opencl.h>
 # define UNIQ_BPP 4
 # define MAP_H 1000
-# define MAP_W 2000
+# define MAP_W 1000
 
 typedef	struct 		s_graphon
 {
@@ -39,6 +39,21 @@ typedef	struct 		s_graphon
 	cl_mem				img_data;
 }					t_graphon;
 
+typedef struct 		s_fractol
+{
+	double min_re;/////////min_re
+	double max_re;;////////max_re
+	double min_im;////////min_im
+	double	max_im;////////max_im
+	double factor_re;////////factor_re/////////ЭТО ЗУМ БЛЯ
+	double factor_im;////////factor_im/////////И ЭТО
+	double k_re;////для джулии
+	double k_im;////тоже для джулии
+	char 	*name;
+}					t_fractol;
+
+
+
 typedef struct 		s_window
 {
 	void			*mlx_ptr;
@@ -48,32 +63,18 @@ typedef struct 		s_window
 	int				*endian;
 	int				*linesize;
 	int				*depth;
-	int				iteration;
-	double			max_iteration;
-	float 			zoom_fix;
-	int 			x_fix;
-	int 			y_fix;
-	int 			real_x;
-	int 			real_y;
+	t_fractol		*fractol;
+	t_graphon		*graphon;
 }					t_window;
 
-typedef struct 		s_fractol
-{
-	double min_re;/////////min_re
-	double max_re;;////////max_re
-	double min_im;////////min_im
-	double	max_im;////////max_im
-	double factor_re;////////factor_re/////////ЭТО ЗУМ БЛЯ
-	double factor_im;////////factor_im/////////И ЭТО
-}					t_fractol;
+
 
 t_window		*init_window();
 void	draw_thing(t_window *window);
 int             close_window(t_window *window);
 void			del_win(t_window *window);
 int             key_press(int key, t_window *window);
-//void		zoom_fix(int x, int y, int key, t_window *window);
-//int             mouse_buttons(int key, int x, int y, t_window *window);
+int             mouse_buttons(int key, int x, int y, t_window *window);
 void	start_cl(t_graphon *graphon/*, t_window *window*/);
 void 	error(int ret);
 char *read_file(char *path);
@@ -83,5 +84,9 @@ void	go_mandelbrot(t_window *window, t_graphon *graphon, t_fractol *fractol);
 void	go_mandelbar(t_window *window, t_graphon *graphon, t_fractol *fractol);
 void	go_julia(t_window *window, t_graphon *graphon, t_fractol *fractol);
 void	go_ship(t_window *window, t_graphon *graphon, t_fractol *fractol);
+void	zoom_fix(int key, t_fractol *fractol, int x, int y);
+void	go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fractol *fractol);
+void arrow_fix(int key, t_fractol *fractol);
+
 
 #endif

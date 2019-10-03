@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:00:07 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/01 12:53:34 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/03 17:15:57 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,28 @@ void			del_win(t_window *window)
 
 int             key_press(int key, t_window *window)
 {
-	(key == 53) ? close_window(window) : 0;
+	if (key == 53)
+		close_window(window);
+	if (key > 122 && key < 127)
+	{
+		arrow_fix(key, window->fractol);
+		ft_bzero(window->img_data, MAP_W * UNIQ_BPP * MAP_H);
+		go_go_power_rangers(window, window->fractol->name, window->graphon, window->fractol);
+	}
+
 	return (0);
 }
 
-/*int             mouse_buttons(int key, int x, int y, t_window *window)
+int             mouse_buttons(int key, int x, int y, t_window *window)
 {
 	if (key == 4 || key == 5)
 	{
-		zoom_fix(x, y, key, window);
+		zoom_fix(key, window->fractol, x, y);
 		ft_bzero(window->img_data,  MAP_W * UNIQ_BPP * MAP_H);
-		clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, &work_size, NULL, 0, NULL, NULL);
-//		test_mandel(window);
-		draw_thing(window);
+		go_go_power_rangers(window, window->fractol->name, window->graphon, window->fractol);
 	}
 	return (0);
-}*/
+}
 
 /*void		zoom_fix(int x, int y, int key, t_window *window)
 {

@@ -28,12 +28,12 @@ t_window		*init_window()
 	*window->endian = 0;
 	*window->linesize = UNIQ_BPP * MAP_W;
 	*window->depth = UNIQ_BPP * 8;
-	window->max_iteration = 50;
+//	window->max_iteration = 50;
 	window->img_data = mlx_get_data_addr(window->img_ptr, window->depth,
 										 window->linesize, window->endian);
-	window->zoom_fix = 1;
-	window->x_fix = 0;
-	window->y_fix = 0;
+//	window->zoom_fix = 1;
+//	window->x_fix = 0;
+//	window->y_fix = 0;
 	return (window);
 }
 
@@ -48,5 +48,7 @@ t_fractol		*init_data()
 	fractol->max_im = fractol->min_im + (fractol->max_re - fractol->min_re) * ((double)(MAP_H) / ((double)MAP_W));
 	fractol->factor_re = (fractol->max_re - fractol->min_re) / (MAP_W - 1);////////factor_re/////////ЭТО ЗУМ БЛЯ
 	fractol->factor_im = (fractol->max_im - fractol->min_im) / (MAP_H - 1);////////factor_im/////////И ЭТО
+	fractol->k_re = -0.4;
+	fractol->k_im = 0.6;
 	return (fractol);
 }

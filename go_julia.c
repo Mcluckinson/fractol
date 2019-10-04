@@ -6,91 +6,86 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 18:07:48 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 16:24:02 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 22:19:28 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "fractol.h"
 
-static void		init_params_julia(t_graphon *graphon, t_fractol *fractol)
+static void		params_julia_2(t_graphon *graf, t_fract *frac)
 {
-	graphon->ret = clSetKernelArg(graphon->kernel, 0, sizeof(double), &fractol->min_re);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 1, sizeof(double), &fractol->max_re);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 2, sizeof(double), &fractol->min_im);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 3, sizeof(double), &fractol->max_im);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 4, sizeof(double), &fractol->factor_re);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 5, sizeof(double), &fractol->factor_im);
-	error(graphon->ret);
-	int map_w = MAP_W;
-	graphon->ret = clSetKernelArg(graphon->kernel, 6, sizeof(int), &map_w);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 7, sizeof(cl_mem), &graphon->img_data);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 8, sizeof(double), &fractol->k_re);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 9, sizeof(double), &fractol->k_im);
-	error(graphon->ret);
-	graphon->ret = clSetKernelArg(graphon->kernel, 10, sizeof(int), &fractol->max_iteration);
-	error(graphon->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 5,
+			sizeof(double), &frac->factor_im);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 6, sizeof(int), &frac->map_w);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 7,
+			sizeof(cl_mem), &graf->img_data);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 8, sizeof(double), &frac->k_re);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 9, sizeof(double), &frac->k_im);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 10,
+			sizeof(int), &frac->max_iteration);
+	error(graf->ret);
 }
 
-static void		run_julia(t_graphon *graphon, t_window *window)
+static void		init_params_julia(t_graphon *graf, t_fract *frac)
 {
-	graphon->work_size = MAP_W * MAP_H;
-	graphon->ret = clEnqueueNDRangeKernel(graphon->command_queue, graphon->kernel, 1, NULL, &graphon->work_size, NULL,
-										  0, NULL, NULL);
-	error(graphon->ret);
-	char *my_image = malloc(sizeof(char) * MAP_H * MAP_W * 4);
-	graphon->ret = clEnqueueReadBuffer(graphon->command_queue, graphon->img_data, CL_TRUE, 0,
-									   sizeof(char) * MAP_H * MAP_W * UNIQ_BPP, my_image, 0, NULL,
-									   NULL);
-	error(graphon->ret);
-	ft_memcpy(window->img_data, my_image, MAP_W * MAP_H * UNIQ_BPP);
-	mlx_put_image_to_window(window->mlx_ptr, window->win_ptr, window->img_ptr, 0, 0);
-	free(my_image);
+	graf->ret = clSetKernelArg(graf->kernel, 0, sizeof(double), &frac->min_re);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 1, sizeof(double), &frac->max_re);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 2, sizeof(double), &frac->min_im);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 3, sizeof(double), &frac->max_im);
+	error(graf->ret);
+	graf->ret = clSetKernelArg(graf->kernel, 4,
+			sizeof(double), &frac->factor_re);
+	error(graf->ret);
+	params_julia_2(graf, frac);
 }
 
-void	go_julia(t_window *window, t_graphon *graphon, t_fractol *fractol)
+static void		run_julia(t_graphon *graf, t_window *window)
 {
+	graf->work_size = MAP_W * MAP_H;
+	graf->ret = clEnqueueNDRangeKernel(graf->command_queue,
+			graf->kernel, 1, NULL, &graf->work_size, NULL, 0, NULL, NULL);
+	error(graf->ret);
+	graf->ret = clEnqueueReadBuffer(graf->command_queue,
+			graf->img_data, CL_TRUE, 0, sizeof(char) * MAP_H * MAP_W * UNIQ_BPP,
+			window->img_data, 0, NULL, NULL);
+	error(graf->ret);
+	mlx_put_image_to_window(window->mlx_ptr,
+			window->win_ptr, window->img_ptr, 0, 0);
+}
 
+void			go_julia(t_window *window, t_graphon *graphon, t_fract *fractol)
+{
 	graphon->program_string = read_file(
 			"/Users/cyuriko/fractol_to_git/fract_codes/julia.cl");
 	graphon->program_len = ft_strlen(graphon->program_string);
-	graphon->program = clCreateProgramWithSource(graphon->context, 1, (const char **) &graphon->program_string,
-												 &graphon->program_len, &graphon->ret);
+	graphon->program = clCreateProgramWithSource(graphon->context, 1,
+			(const char**)&graphon->program_string,
+			&graphon->program_len, &graphon->ret);
 	error(graphon->ret);
-	graphon->ret = clBuildProgram(graphon->program, 1, &graphon->device_id, NULL, NULL,
-								  NULL);
+	graphon->ret = clBuildProgram(graphon->program, 1,
+			&graphon->device_id, NULL, NULL, NULL);
 	error_log(graphon);
 	error(graphon->ret);
 	graphon->kernel = clCreateKernel(graphon->program, "test", &graphon->ret);
 	error(graphon->ret);
-	graphon->img_data = clCreateBuffer(graphon->context, CL_MEM_READ_WRITE, MAP_W * MAP_H * UNIQ_BPP * sizeof(char),
-									   NULL, &graphon->ret);
+	graphon->img_data = clCreateBuffer(graphon->context, CL_MEM_READ_WRITE,
+			MAP_W * MAP_H * UNIQ_BPP * sizeof(char), NULL, &graphon->ret);
 	error(graphon->ret);
 	init_params_julia(graphon, fractol);
 	run_julia(graphon, window);
 }
 
-void	draw_julia(t_graphon *graphon, t_fractol *fractol, t_window *window)
+void			draw_julia(t_graphon *graphon,
+		t_fract *fractol, t_window *window)
 {
 	init_params_julia(graphon, fractol);
 	run_julia(graphon, window);
-}
-
-int 	julia_thingy(int x, int y, t_window *window)
-{
-	if (window->fractol->thingy_block == 0)
-	{
-		window->fractol->k_re = ((double) x / MAP_W - 0.5);
-		window->fractol->k_im = ((double) (MAP_H - y) / MAP_H - 0.5);
-		draw_julia(window->graphon, window->fractol, window);
-	}
-	return (0);
 }

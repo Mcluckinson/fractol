@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:41:57 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 15:51:36 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 21:49:37 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ t_window		*init_window()
 	return (window);
 }
 
-t_fractol		*init_data()
+t_fract		*init_data()
 {
-	t_fractol	*fractol;
-	if (!(fractol = (t_fractol*)ft_memalloc(sizeof(t_fractol))))
+	t_fract	*fractol;
+	if (!(fractol = (t_fract*)ft_memalloc(sizeof(t_fract))))
 		return (NULL);
 	fractol->min_re = -2.0;
 	fractol->max_re = 2.0;
@@ -43,5 +43,6 @@ t_fractol		*init_data()
 	fractol->k_im = -0.203;
 	fractol->max_iteration = 20;
 	fractol->thingy_block = 0;
+	fractol->map_w = MAP_W;
 	return (fractol);
 }

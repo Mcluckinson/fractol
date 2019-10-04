@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:49:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/01 15:51:38 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 22:19:12 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,15 @@ void	error_log(t_graphon *graphon)
 		clGetProgramBuildInfo(graphon->program, graphon->device_id, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
 		ft_putstr_fd(log, 2);
 	}
+}
+
+int				julia_thingy(int x, int y, t_window *window)
+{
+	if (window->fractol->thingy_block == 0)
+	{
+		window->fractol->k_re = ((double)x / MAP_W - 0.5);
+		window->fractol->k_im = ((double)(MAP_H - y) / MAP_H - 0.5);
+		draw_julia(window->graphon, window->fractol, window);
+	}
+	return (0);
 }

@@ -21,7 +21,7 @@ static void	usage(char *argv, int argc)
 	}
 }
 
-void	rangers_assemble(t_window *window, t_graphon *graphon, t_fractol *fractol)
+void	rangers_assemble(t_window *window, t_graphon *graphon, t_fract *fractol)
 {
 	if (ft_strequ(fractol->name, "mandelbrot"))
 		draw_mandelbrot(graphon, fractol, window);
@@ -33,7 +33,7 @@ void	rangers_assemble(t_window *window, t_graphon *graphon, t_fractol *fractol)
 		draw_ship(graphon, fractol, window);
 }
 
-void go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fractol *fractol)
+void go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fract *fractol)
 {
 	if (ft_strequ(name, "mandelbrot"))
 		go_mandelbrot(window, graphon, fractol);
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 {
 	t_window	*window;
 	t_graphon	*graphon;
-	t_fractol	*fractol;
+	t_fract	*fractol;
 
 	usage(argv[1], argc);
 	if (!(graphon = ft_memalloc(sizeof(t_graphon))))

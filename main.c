@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:42:53 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 12:42:55 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/05 00:10:50 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,49 @@
 
 static void	usage(char *argv, int argc)
 {
-	if (argc != 2 || (!ft_strequ(argv, "julia") && !ft_strequ(argv, "burning_ship") && !ft_strequ(argv, "mandelbrot") && !ft_strequ(argv, "mandelbar")))
+	if (argc != 2 || (!ft_strequ(argv, "julia") &&
+	!ft_strequ(argv, "burning_ship") &&
+	!ft_strequ(argv, "mandelbrot") &&
+	!ft_strequ(argv, "mandelbar")))
 	{
-		ft_putstr("Usage: ./fractol + arg: mandelbrot/julia/mandelbar/burning_ship");
+		ft_putstr("Usage: ./fractol + "
+			"arg: mandelbrot/julia/mandelbar/burning_ship");
 		exit(0);
 	}
 }
 
-void	rangers_assemble(t_window *window, t_graphon *graphon, t_fract *fractol)
+void		rangers_assemble(t_window *win, t_graphon *graphon, t_fract *frac)
 {
-	if (ft_strequ(fractol->name, "mandelbrot"))
-		draw_mandelbrot(graphon, fractol, window);
-	else if (ft_strequ(fractol->name, "mandelbar"))
-		draw_mandelbar(graphon, fractol, window);
-	else if (ft_strequ(fractol->name, "julia"))
-		draw_julia(graphon, fractol, window);
-	else if (ft_strequ(fractol->name, "burning_ship"))
-		draw_ship(graphon, fractol, window);
+	if (ft_strequ(frac->name, "mandelbrot"))
+		draw_mandelbrot(graphon, frac, win);
+	else if (ft_strequ(frac->name, "mandelbar"))
+		draw_mandelbar(graphon, frac, win);
+	else if (ft_strequ(frac->name, "julia"))
+		draw_julia(graphon, frac, win);
+	else if (ft_strequ(frac->name, "burning_ship"))
+		draw_ship(graphon, frac, win);
 }
 
-void go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fract *fractol)
+void		go_go(t_window *win, char *name, t_graphon *graf, t_fract *frac)
 {
 	if (ft_strequ(name, "mandelbrot"))
-		go_mandelbrot(window, graphon, fractol);
+		go_mandelbrot(win, graf, frac);
 	else if (ft_strequ(name, "mandelbar"))
-		go_mandelbar(window, graphon, fractol);
+		go_mandelbar(win, graf, frac);
 	else if (ft_strequ(name, "julia"))
 	{
-		go_julia(window, graphon, fractol);
-		mlx_hook(window->win_ptr, 6, 1L << 6, julia_thingy, window);
+		go_julia(win, graf, frac);
+		mlx_hook(win->win_ptr, 6, 1L << 6, julia_thingy, win);
 	}
 	else if (ft_strequ(name, "burning_ship"))
-		go_ship(window, graphon, fractol);
+		go_ship(win, graf, frac);
 }
 
-int	main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	t_window	*window;
-	t_graphon	*graphon;
-	t_fract	*fractol;
+	t_window		*window;
+	t_graphon		*graphon;
+	t_fract			*fractol;
 
 	usage(argv[1], argc);
 	if (!(graphon = ft_memalloc(sizeof(t_graphon))))
@@ -64,7 +68,7 @@ int	main(int argc, char **argv)
 	fractol->name = argv[1];
 	start_cl(graphon);
 	window->graphon = graphon;
-	go_go_power_rangers(window, fractol->name, graphon, fractol);
+	go_go(window, fractol->name, graphon, fractol);
 	mlx_hook(window->win_ptr, 17, 1L << 17, close_window, window);
 	mlx_hook(window->win_ptr, 2, 1L << 0, key_press, window);
 	mlx_hook(window->win_ptr, 4, 1L << 2, mouse_buttons, window);

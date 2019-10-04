@@ -6,13 +6,13 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:49:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 22:19:12 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/05 00:28:46 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void			del_win(t_window *window)
+void	del_win(t_window *window)
 {
 	if (window && window->fractol)
 		free(window->fractol);
@@ -28,18 +28,18 @@ void			del_win(t_window *window)
 		free(window);
 }
 
-void 	error(int ret)
+void	error(int ret)
 {
 	if (ret != CL_SUCCESS)
 		exit(ret);
 	return ;
 }
 
-char *read_file(char *path)///////ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ НЕЛЬЗЯ БЛЯДЬ АККУРАТНО НУ ЭТО КОНЕЧНО ДЛЯ БОНУСА НО ТЫ ТАМ СМОТРИ ЕБАТЬ
+char	*read_file(char *path)///////ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ НЕЛЬЗЯ БЛЯДЬ АККУРАТНО НУ ЭТО КОНЕЧНО ДЛЯ БОНУСА НО ТЫ ТАМ СМОТРИ ЕБАТЬ
 {
-	char *buffer = 0;
-	long length;
-	FILE * f = fopen (path, "rb");
+	char	*buffer;
+	long	length;
+	FILE 	*f = fopen (path, "rb");
 
 	if (f)
 	{
@@ -58,19 +58,24 @@ char *read_file(char *path)///////ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ
 
 void	error_log(t_graphon *graphon)
 {
-	if (graphon->ret != CL_SUCCESS)//////эта хуйня выведет ошибку если в кернеле написано говно, попробуй написать хуйню в тест.сл
+	char	*log;
+	size_t	log_size;
+
+	if (graphon->ret != CL_SUCCESS)
 	{
-		size_t log_size;
-		clGetProgramBuildInfo(graphon->program, graphon->device_id, CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
-		char *log = ft_memalloc((log_size + 1) * sizeof(char));
+		clGetProgramBuildInfo(graphon->program, graphon->device_id,
+				CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
+		log = ft_memalloc((log_size + 1) * sizeof(char));
 		if (!log)
-			exit(graphon->ret) ;
-		clGetProgramBuildInfo(graphon->program, graphon->device_id, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
+			exit(graphon->ret);
+		clGetProgramBuildInfo(graphon->program,
+				graphon->device_id, CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
 		ft_putstr_fd(log, 2);
+		free(log);
 	}
 }
 
-int				julia_thingy(int x, int y, t_window *window)
+int		julia_thingy(int x, int y, t_window *window)
 {
 	if (window->fractol->thingy_block == 0)
 	{

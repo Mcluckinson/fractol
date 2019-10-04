@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:09:34 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 22:16:25 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 22:19:12 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void					go_ship(t_window *window,
 		t_graphon *graphon, t_fract *fractol);
 void					zoom_fix(int key, t_fract *fractol,
 		int x, int y);
-void					go_go_power_rangers(t_window *window,
+void					go_go(t_window *window,
 		char *name, t_graphon *graphon, t_fract *fractol);
 void					arrow_fix(int key, t_fract *fractol);
 void					draw_mandelbar(t_graphon *graphon,

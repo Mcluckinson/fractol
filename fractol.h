@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:09:34 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/03 19:08:28 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:42:56 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct 		s_fractol
 	double k_re;////для джулии
 	double k_im;////тоже для джулии
 	char 	*name;
+	double tmp_kre;/////для джулии тож
+	double	tmp_kim;/////для джулии тож
 }					t_fractol;
 
 
@@ -87,6 +89,12 @@ void	go_ship(t_window *window, t_graphon *graphon, t_fractol *fractol);
 void	zoom_fix(int key, t_fractol *fractol, int x, int y);
 void	go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fractol *fractol);
 void arrow_fix(int key, t_fractol *fractol);
+void	draw_mandelbar(t_graphon *graphon, t_fractol *fractol, t_window *window);
+void	draw_julia(t_graphon *graphon, t_fractol *fractol, t_window *window);
+void	draw_ship(t_graphon *graphon, t_fractol *fractol, t_window *window);
+void	draw_mandelbrot(t_graphon *graphon, t_fractol *fractol, t_window *window);
+void	rangers_assemble(t_window *window, t_graphon *graphon, t_fractol *fractol);
+int 	julia_thingy(int x, int y, t_window *window);
 
 
 #endif

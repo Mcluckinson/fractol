@@ -7,8 +7,8 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     double	c_im;
     double  z_re;
     double  z_im;
-    int     iteration = 10;
-    int     max_iteration = 1000;
+    int     iteration = 0;
+    int     max_iteration = 50;
     double  t;
     unsigned int	color = 0x00ff00ff;
 
@@ -28,16 +28,10 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     		iteration++;
     	}// Формула множества Мандельброта
     t = (double)iteration / (double)max_iteration;
-  //  if (t != 0)
-    //    printf ("%i\n", t);
    unsigned int red = (int)(9 * (1 - t) * pow(t, 3) * 255);
    unsigned int green = (int)(15 * pow((1 - t), 2) * pow(t, 2) * 255);
    unsigned int blue = (int)(8.5 * pow((1 - t), 3) * t * 255);
   color =red << 16 | green << 8 | blue;
 
         img_data[gid] = color;
-
-  //  img_data[gid + 1] = green;
-   // img_data[gid + 2] = red;
-
 }

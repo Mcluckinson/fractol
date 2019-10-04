@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:42:53 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/03 18:12:46 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:42:55 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ static void	usage(char *argv, int argc)
 	}
 }
 
+void	rangers_assemble(t_window *window, t_graphon *graphon, t_fractol *fractol)
+{
+	if (ft_strequ(fractol->name, "mandelbrot"))
+		draw_mandelbrot(graphon, fractol, window);
+	else if (ft_strequ(fractol->name, "mandelbar"))
+		draw_mandelbar(graphon, fractol, window);
+	else if (ft_strequ(fractol->name, "julia"))
+		draw_julia(graphon, fractol, window);
+	else if (ft_strequ(fractol->name, "burning_ship"))
+		draw_ship(graphon, fractol, window);
+}
+
 void go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fractol *fractol)
 {
 	if (ft_strequ(name, "mandelbrot"))
@@ -28,14 +40,12 @@ void go_go_power_rangers(t_window *window, char *name, t_graphon *graphon, t_fra
 	else if (ft_strequ(name, "mandelbar"))
 		go_mandelbar(window, graphon, fractol);
 	else if (ft_strequ(name, "julia"))
+	{
 		go_julia(window, graphon, fractol);
+		mlx_hook(window->win_ptr, 6, 1L << 6, julia_thingy, window);
+	}
 	else if (ft_strequ(name, "burning_ship"))
 		go_ship(window, graphon, fractol);
-}
-
-void	draw_thing(t_window *window)
-{
-mlx_put_image_to_window(window->mlx_ptr, window->win_ptr, window->img_ptr, 0, 0);
 }
 
 int	main(int argc, char **argv)
@@ -52,16 +62,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	window->fractol = fractol;
 	fractol->name = argv[1];
-	start_cl(graphon/*, window*/);
+	start_cl(graphon);
 	window->graphon = graphon;
 	go_go_power_rangers(window, fractol->name, graphon, fractol);
-//	start_cl(graphon, window);
-
 	mlx_hook(window->win_ptr, 17, 1L << 17, close_window, window);
 	mlx_hook(window->win_ptr, 2, 1L << 0, key_press, window);
 	mlx_hook(window->win_ptr, 4, 1L << 2, mouse_buttons, window);
 	mlx_loop(window->mlx_ptr);
-
-
-
 }

@@ -8,11 +8,9 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     double  z_re;
     double  z_im;
     int     iteration = 0;
-    int     max_iteration = 200;
+    int     max_iteration = 50;
     double  t;
     unsigned int	color = 0x00ff00ff;
- //   double  k_re = -0.4;
-  //  double  k_im = 0.6;
 
     gid = get_global_id(0);
     y = gid / map_w;
@@ -28,7 +26,7 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     		z_re = (pow(z_re, 2.0) - pow(z_im, 2.0)) + k_re;
     		z_im = 2.0 * (tmp * z_im) + k_re;
     		iteration++;
-    	}// Формула множества Мандельброта
+    	}
     t = (double)iteration / (double)max_iteration;
 
    unsigned int red = (int)(9 * (1 - t) * pow(t, 3) * 255);
@@ -37,7 +35,4 @@ __kernel void test(const double min_re, const double max_re, const double min_im
   color =red << 16 | green << 8 | blue;
 
         img_data[gid] = color;
-  //  img_data[gid + 1] = green;
-   // img_data[gid + 2] = red;
-
 }

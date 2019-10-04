@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 18:07:12 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/01 18:10:10 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:42:55 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,10 @@ void	go_mandelbar(t_window *window, t_graphon *graphon, t_fractol *fractol)
 	error(graphon->ret);
 	init_params_mandelbar(graphon/*, window*/, fractol);
 	run_mandelbar(graphon, window/*, fractol*/);
+}
+
+void	draw_mandelbar(t_graphon *graphon, t_fractol *fractol, t_window *window)
+{
+	init_params_mandelbar(graphon, fractol);
+	run_mandelbar(graphon, window);
 }

@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:00:07 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/03 17:15:57 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 14:10:48 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int             key_press(int key, t_window *window)
 	{
 		arrow_fix(key, window->fractol);
 		ft_bzero(window->img_data, MAP_W * UNIQ_BPP * MAP_H);
-		go_go_power_rangers(window, window->fractol->name, window->graphon, window->fractol);
+		rangers_assemble(window, window->graphon, window->fractol);
 	}
 
 	return (0);
@@ -58,22 +58,12 @@ int             mouse_buttons(int key, int x, int y, t_window *window)
 	{
 		zoom_fix(key, window->fractol, x, y);
 		ft_bzero(window->img_data,  MAP_W * UNIQ_BPP * MAP_H);
-		go_go_power_rangers(window, window->fractol->name, window->graphon, window->fractol);
+		rangers_assemble(window, window->graphon, window->fractol);
 	}
 	return (0);
 }
 
-/*void		zoom_fix(int x, int y, int key, t_window *window)
+void		fix_iterations(int key, t_window *window)
 {
 
-	window->x_fix = MAP_W / 2 - x;
-	window->y_fix = MAP_H / 2 - y;
-	if (key == 4)
-		window->zoom_fix += 0.1;
-	else
-	{
-		if (window->zoom_fix > 0.2)
-			window->zoom_fix -= 0.1;
-	}
-
-}*/
+}

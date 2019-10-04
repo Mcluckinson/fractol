@@ -1,4 +1,4 @@
-__kernel void test(const double min_re, const double max_re, const double min_im, const double max_im, const double factor_re, const double factor_im, const int map_w, __global unsigned int* img_data)
+__kernel void test(const double min_re, const double max_re, const double min_im, const double max_im, const double factor_re, const double factor_im, const int map_w, __global unsigned int* img_data, const int max_iteration)
 {
     int gid;
     int x;
@@ -8,7 +8,7 @@ __kernel void test(const double min_re, const double max_re, const double min_im
     double  z_re;
     double  z_im;
     int     iteration = 0;
-    int     max_iteration = 50;
+ //   int     max_iteration = 50;
     double  t;
     unsigned int	color = 0x00ff00ff;
 

@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 16:10:15 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 12:42:55 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 15:38:27 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static void		init_params_mandelbrot(t_graphon *graphon, t_fractol *fractol)
 	error(graphon->ret);
 	graphon->ret = clSetKernelArg(graphon->kernel, 7, sizeof(cl_mem), &graphon->img_data);
 	error(graphon->ret);
+	graphon->ret = clSetKernelArg(graphon->kernel, 8, sizeof(int), &fractol->max_iteration);
+	error(graphon->ret);
 }
 
 static void		run_mandelbrot(t_graphon *graphon, t_window *window)
@@ -47,7 +49,6 @@ static void		run_mandelbrot(t_graphon *graphon, t_window *window)
 	ft_memcpy(window->img_data, my_image, MAP_W * MAP_H * UNIQ_BPP);//////////КОПИРУЕМ БУФЕР В МЛХ
 	mlx_put_image_to_window(window->mlx_ptr, window->win_ptr, window->img_ptr, 0, 0);//////////КИДАЕМ ЭТУ ХУЙНЮ В ОКНО
 	free(my_image);
-	free(graphon->program_string);
 }
 
 void	go_mandelbrot(t_window *window, t_graphon *graphon, t_fractol *fractol)

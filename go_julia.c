@@ -6,16 +6,15 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 18:07:48 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 14:06:48 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:24:02 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "fractol.h"
 
-static void		init_params_julia(t_graphon *graphon/*, t_window *window*/, t_fractol *fractol)
+static void		init_params_julia(t_graphon *graphon, t_fractol *fractol)
 {
-
 	graphon->ret = clSetKernelArg(graphon->kernel, 0, sizeof(double), &fractol->min_re);
 	error(graphon->ret);
 	graphon->ret = clSetKernelArg(graphon->kernel, 1, sizeof(double), &fractol->max_re);
@@ -37,20 +36,22 @@ static void		init_params_julia(t_graphon *graphon/*, t_window *window*/, t_fract
 	error(graphon->ret);
 	graphon->ret = clSetKernelArg(graphon->kernel, 9, sizeof(double), &fractol->k_im);
 	error(graphon->ret);
+	graphon->ret = clSetKernelArg(graphon->kernel, 10, sizeof(int), &fractol->max_iteration);
+	error(graphon->ret);
 }
 
 static void		run_julia(t_graphon *graphon, t_window *window)
 {
-	graphon->work_size = MAP_W * MAP_H;/////////////количество запусков
+	graphon->work_size = MAP_W * MAP_H;
 	graphon->ret = clEnqueueNDRangeKernel(graphon->command_queue, graphon->kernel, 1, NULL, &graphon->work_size, NULL,
-										  0, NULL, NULL);///////////////запускаем кернел
+										  0, NULL, NULL);
 	error(graphon->ret);
-	char *my_image = malloc(sizeof(char) * MAP_H * MAP_W * 4);///////////БУФЕР ЧТОБЫ ДОСТАТЬ В НЕГО ДАННЫЕ ИЗ ВИДЕОКАРТЫ
+	char *my_image = malloc(sizeof(char) * MAP_H * MAP_W * 4);
 	graphon->ret = clEnqueueReadBuffer(graphon->command_queue, graphon->img_data, CL_TRUE, 0,
 									   sizeof(char) * MAP_H * MAP_W * UNIQ_BPP, my_image, 0, NULL,
 									   NULL);
 	error(graphon->ret);
-	ft_memcpy(window->img_data, my_image, MAP_W * MAP_H * UNIQ_BPP);//////////КОПИРУЕМ БУФЕР В МЛХ
+	ft_memcpy(window->img_data, my_image, MAP_W * MAP_H * UNIQ_BPP);
 	mlx_put_image_to_window(window->mlx_ptr, window->win_ptr, window->img_ptr, 0, 0);
 	free(my_image);
 }
@@ -59,22 +60,22 @@ void	go_julia(t_window *window, t_graphon *graphon, t_fractol *fractol)
 {
 
 	graphon->program_string = read_file(
-			"/Users/cyuriko/fractol_to_git/fract_codes/julia.cl");////////////читаем файл с кернелом в програм стринг
-	graphon->program_len = ft_strlen(graphon->program_string);//////////длина програм стринг окей
+			"/Users/cyuriko/fractol_to_git/fract_codes/julia.cl");
+	graphon->program_len = ft_strlen(graphon->program_string);
 	graphon->program = clCreateProgramWithSource(graphon->context, 1, (const char **) &graphon->program_string,
-												 &graphon->program_len, &graphon->ret);///////////создаем программу
+												 &graphon->program_len, &graphon->ret);
 	error(graphon->ret);
 	graphon->ret = clBuildProgram(graphon->program, 1, &graphon->device_id, NULL, NULL,
 								  NULL);
 	error_log(graphon);
 	error(graphon->ret);
-	graphon->kernel = clCreateKernel(graphon->program, "test", &graphon->ret);///////////создаем кернел
+	graphon->kernel = clCreateKernel(graphon->program, "test", &graphon->ret);
 	error(graphon->ret);
 	graphon->img_data = clCreateBuffer(graphon->context, CL_MEM_READ_WRITE, MAP_W * MAP_H * UNIQ_BPP * sizeof(char),
-									   NULL, &graphon->ret);/////////////буфер в видеокарте
+									   NULL, &graphon->ret);
 	error(graphon->ret);
-	init_params_julia(graphon/*, window*/, fractol);
-	run_julia(graphon, window/*, fractol*/);
+	init_params_julia(graphon, fractol);
+	run_julia(graphon, window);
 }
 
 void	draw_julia(t_graphon *graphon, t_fractol *fractol, t_window *window)
@@ -85,11 +86,11 @@ void	draw_julia(t_graphon *graphon, t_fractol *fractol, t_window *window)
 
 int 	julia_thingy(int x, int y, t_window *window)
 {
-	window->fractol->k_re = 4 * ((double)x / MAP_W - 0.5);
-	window->fractol->k_im = 4 * ((double)(MAP_H - y) / MAP_H - 0.5);
-	draw_julia(window->graphon, window->fractol, window);
+	if (window->fractol->thingy_block == 0)
+	{
+		window->fractol->k_re = ((double) x / MAP_W - 0.5);
+		window->fractol->k_im = ((double) (MAP_H - y) / MAP_H - 0.5);
+		draw_julia(window->graphon, window->fractol, window);
+	}
 	return (0);
-	/*КАРОЧ ЗАПОМНИТЬ ОРИГИНАЛЬНЫЕ К_Ре И К_ИМ И МЕНЯТЬ ЭТИ ЗНАЧЕНИЯ В СТРУКТУРЕ ФРАКТОЛ ОТНОСИТЕЛЬНРО ЗАПОМНЕННЫХ СТАРТОВЫХ
-	ЗАПОМНИТЬ МОЖНО ХОТЬ В ФРАКТОЛ ХОТЬ В ВИНДОУ ВООБЩЕ ДО ПИЗДЫ*/
-
 }

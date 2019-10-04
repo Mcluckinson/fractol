@@ -36,6 +36,8 @@ static void		init_params_ship(t_graphon *graphon/*, t_window *window*/, t_fracto
 	///////////////
 	graphon->ret = clSetKernelArg(graphon->kernel, 7, sizeof(cl_mem), &graphon->img_data);/////////////кернел аргумент 0
 	error(graphon->ret);
+	graphon->ret = clSetKernelArg(graphon->kernel, 8, sizeof(int), &fractol->max_iteration);
+	error(graphon->ret);
 
 	//////////////ВСЕ АРГУМЕНТЫ ЗАКОНЧИЛИСЬ
 }

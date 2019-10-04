@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 17:09:34 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 12:42:56 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 15:42:34 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct 		s_fractol
 	double k_re;////для джулии
 	double k_im;////тоже для джулии
 	char 	*name;
-	double tmp_kre;/////для джулии тож
-	double	tmp_kim;/////для джулии тож
+	int 	max_iteration;
+	int 	thingy_block;
 }					t_fractol;
 
 
@@ -62,9 +62,9 @@ typedef struct 		s_window
 	void			*win_ptr;
 	void			*img_ptr;
 	char 			*img_data;
-	int				*endian;
-	int				*linesize;
-	int				*depth;
+	int				endian;
+	int				linesize;
+	int				depth;
 	t_fractol		*fractol;
 	t_graphon		*graphon;
 }					t_window;
@@ -95,6 +95,7 @@ void	draw_ship(t_graphon *graphon, t_fractol *fractol, t_window *window);
 void	draw_mandelbrot(t_graphon *graphon, t_fractol *fractol, t_window *window);
 void	rangers_assemble(t_window *window, t_graphon *graphon, t_fractol *fractol);
 int 	julia_thingy(int x, int y, t_window *window);
+void		fix_iterations(int key, t_window *window);
 
 
 #endif

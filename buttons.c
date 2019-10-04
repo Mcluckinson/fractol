@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:00:07 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/04 14:10:48 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:01:02 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,6 @@ int             close_window(t_window *window)
 {
 	del_win(window);
 	exit(0);
-}
-
-void			del_win(t_window *window)
-{
-	if (window && window->win_ptr)
-		free(window->win_ptr);
-	if (window && window->mlx_ptr)
-		free(window->mlx_ptr);
-	if (window && window->img_ptr)
-		free(window->img_ptr);
-	if (window && window->linesize)
-		free(window->linesize);
-	if (window && window->endian)
-		free(window->endian);
-	if (window && window->depth)
-		free(window->depth);
-	if (window && window->img_data)
-		free(window->img_data);
-	if (window)
-		free(window);
 }
 
 int             key_press(int key, t_window *window)
@@ -48,7 +28,15 @@ int             key_press(int key, t_window *window)
 		ft_bzero(window->img_data, MAP_W * UNIQ_BPP * MAP_H);
 		rangers_assemble(window, window->graphon, window->fractol);
 	}
-
+	if (key == 69 || key == 24 || key == 78 || key == 27)
+		fix_iterations(key, window);
+	if (key == 49)
+	{
+		if (window->fractol->thingy_block == 0)
+			window->fractol->thingy_block = 1;
+		else
+			window->fractol->thingy_block = 0;
+	}
 	return (0);
 }
 
@@ -65,5 +53,10 @@ int             mouse_buttons(int key, int x, int y, t_window *window)
 
 void		fix_iterations(int key, t_window *window)
 {
-
+	if (key == 69 || key == 24)
+		window->fractol->max_iteration += 5;
+	else if ((key == 78 || key == 27) && window->fractol->max_iteration > 4)
+		window->fractol->max_iteration -=5;
+	ft_bzero(window->img_data,  MAP_W * UNIQ_BPP * MAP_H);
+	rangers_assemble(window, window->graphon, window->fractol);
 }

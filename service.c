@@ -12,6 +12,22 @@
 
 #include "fractol.h"
 
+void			del_win(t_window *window)
+{
+	if (window && window->fractol)
+		free(window->fractol);
+	if (window && window->win_ptr)
+		free(window->win_ptr);
+	if (window && window->mlx_ptr)
+		free(window->mlx_ptr);
+	if (window && window->img_ptr)
+		free(window->img_ptr);
+	if (window && window->img_data)
+		free(window->img_data);
+	if (window)
+		free(window);
+}
+
 void 	error(int ret)
 {
 	if (ret != CL_SUCCESS)

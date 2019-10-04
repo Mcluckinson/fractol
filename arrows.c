@@ -14,24 +14,24 @@
 
 static void go_left(t_fractol *fractol)
 {
-	fractol->max_re+= 0.1;
-	fractol->min_re+= 0.1;
+	fractol->max_re+= 0.05;
+	fractol->min_re+= 0.05;
 }
 
 static void go_right(t_fractol *fractol)
 {
-	fractol->max_re-= 0.1;
-	fractol->min_re-= 0.1;
+	fractol->max_re-= 0.05;
+	fractol->min_re-= 0.05;
 }
 static void go_down(t_fractol *fractol)
 {
-	fractol->max_im += 0.1;
-	fractol->min_im += 0.1;
+	fractol->max_im += 0.05;
+	fractol->min_im += 0.05;
 }
 static void go_up(t_fractol *fractol)
 {
-	fractol->max_im -= 0.1;
-	fractol->min_im -= 0.1;
+	fractol->max_im -= 0.05;
+	fractol->min_im -= 0.05;
 }
 void arrow_fix(int key, t_fractol *fractol)
 {

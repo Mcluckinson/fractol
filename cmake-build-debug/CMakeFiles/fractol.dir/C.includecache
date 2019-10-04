@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/Users/cyuriko/fractol_to_git/arrows.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/buttons.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
 /Users/cyuriko/fractol_to_git/fractol.h
 minilibx_macos/mlx.h
 /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
@@ -17,6 +25,30 @@ pthread.h
 -
 OpenCL/opencl.h
 -
+
+/Users/cyuriko/fractol_to_git/go_julia.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/go_mandelbar.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/go_mandelbrot.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/go_ship.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/init_cl.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/init_data.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
 
 /Users/cyuriko/fractol_to_git/libft/get_next_line.h
 libft.h
@@ -41,4 +73,12 @@ fractol.h
 /Users/cyuriko/fractol_to_git/fractol.h
 
 /Users/cyuriko/fractol_to_git/minilibx_macos/mlx.h
+
+/Users/cyuriko/fractol_to_git/service.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
+
+/Users/cyuriko/fractol_to_git/zoom.c
+fractol.h
+/Users/cyuriko/fractol_to_git/fractol.h
 

@@ -1,8 +1,6 @@
 __kernel void test(const double min_re, const double max_re, const double min_im, const double max_im, const double factor_re, const double factor_im, const int map_w, __global unsigned int* img_data, const int max_iteration)
 {
     int gid;
-    int x;
-    int y;
     double	c_re;
     double	c_im;
     double  z_re;

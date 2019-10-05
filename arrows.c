@@ -14,26 +14,26 @@
 
 static void	go_left(t_fract *fractol)
 {
-	fractol->max_re += fractol->factor_re * 2;
-	fractol->min_re += fractol->factor_re * 2;
+	fractol->max_re += fractol->factor_re * 3;
+	fractol->min_re += fractol->factor_re * 3;
 }
 
 static void	go_right(t_fract *fractol)
 {
-	fractol->max_re -= fractol->factor_re * 2;
-	fractol->min_re -= fractol->factor_re * 2;
+	fractol->max_re -= fractol->factor_re * 3;
+	fractol->min_re -= fractol->factor_re * 3;
 }
 
 static void	go_down(t_fract *fractol)
 {
-	fractol->max_im += fractol->factor_im * 2;
-	fractol->min_im += fractol->factor_im * 2;
+	fractol->max_im += fractol->factor_im * 3;
+	fractol->min_im += fractol->factor_im * 3;
 }
 
 static void	go_up(t_fract *fractol)
 {
-	fractol->max_im -= fractol->factor_im * 2;
-	fractol->min_im -= fractol->factor_im * 2;
+	fractol->max_im -= fractol->factor_im * 3;
+	fractol->min_im -= fractol->factor_im * 3;
 }
 
 void		arrow_fix(int key, t_fract *fractol)

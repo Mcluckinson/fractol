@@ -6,7 +6,7 @@
 /*   By: cyuriko <cyuriko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 15:49:49 by cyuriko           #+#    #+#             */
-/*   Updated: 2019/10/05 00:28:46 by cyuriko          ###   ########.fr       */
+/*   Updated: 2019/10/05 16:25:31 by cyuriko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,19 @@ void	error(int ret)
 	return ;
 }
 
-char	*read_file(char *path)///////ЭТОЙ ХУЙНЕЙ ПОЛЬЗОВАТЬСЯ НЕЛЬЗЯ БЛЯДЬ АККУРАТНО НУ ЭТО КОНЕЧНО ДЛЯ БОНУСА НО ТЫ ТАМ СМОТРИ ЕБАТЬ
+char	*read_file(char *path)
 {
 	char	*buffer;
-	long	length;
-	FILE 	*f = fopen (path, "rb");
+	char	buffer_temp[5000];
+	int		fd;
 
-	if (f)
-	{
-		fseek (f, 0, SEEK_END);
-		length = ftell (f);
-		fseek (f, 0, SEEK_SET);
-		buffer = ft_strnew(length);/////не забудь это зафришить
-		if (buffer)
-		{
-			fread (buffer, 1, length, f);
-		}
-		fclose (f);
-	}
+	buffer = NULL;
+	fd = open(path, O_RDONLY);
+	if (!fd)
+		return (NULL);
+	if (read(fd, buffer_temp, 5000))
+		buffer = strdup(buffer_temp);
+	close(fd);
 	return (buffer);
 }
 

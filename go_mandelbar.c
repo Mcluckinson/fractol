@@ -57,7 +57,7 @@ void			go_mandelbar(t_window *window,
 		t_graphon *graphon, t_fract *fractol)
 {
 	graphon->program_string = read_file(
-			"/Users/cyuriko/fractol_to_git/fract_codes/mandelbar.cl");
+			"./fract_codes/mandelbar.cl");
 	graphon->program_len = ft_strlen(graphon->program_string);
 	graphon->program = clCreateProgramWithSource(graphon->context,
 			1, (const char**)&graphon->program_string,

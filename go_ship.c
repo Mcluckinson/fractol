@@ -56,7 +56,7 @@ static void		run_ship(t_graphon *graphon, t_window *window)
 void			go_ship(t_window *window, t_graphon *graphon, t_fract *fractol)
 {
 	graphon->program_string = read_file(
-			"/Users/cyuriko/fractol_to_git/fract_codes/burning_ship.cl");
+			"./fract_codes/burning_ship.cl");
 	graphon->program_len = ft_strlen(graphon->program_string);
 	graphon->program = clCreateProgramWithSource(graphon->context, 1,
 			(const char **)&graphon->program_string,

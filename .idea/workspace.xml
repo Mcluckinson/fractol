@@ -12,13 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a8f91a3-392d-4043-b978-739002063ea1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arrows.c" beforeDir="false" afterPath="$PROJECT_DIR$/arrows.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buttons.c" beforeDir="false" afterPath="$PROJECT_DIR$/buttons.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fract_codes/mandelbrot.cl" beforeDir="false" afterPath="$PROJECT_DIR$/fract_codes/mandelbrot.cl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fractol.h" beforeDir="false" afterPath="$PROJECT_DIR$/fractol.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_cl.c" beforeDir="false" afterPath="$PROJECT_DIR$/init_cl.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.c" beforeDir="false" afterPath="$PROJECT_DIR$/service.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fractol" beforeDir="false" afterPath="$PROJECT_DIR$/fractol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_julia.c" beforeDir="false" afterPath="$PROJECT_DIR$/go_julia.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_mandelbar.c" beforeDir="false" afterPath="$PROJECT_DIR$/go_mandelbar.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_mandelbrot.c" beforeDir="false" afterPath="$PROJECT_DIR$/go_mandelbrot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go_ship.c" beforeDir="false" afterPath="$PROJECT_DIR$/go_ship.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +35,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go_ship.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="521">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_julia.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go_mandelbar.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go_mandelbrot.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -50,15 +76,6 @@
               <folding>
                 <element signature="e#930#962#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zoom.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -99,7 +116,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arrows.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
@@ -133,10 +150,6 @@
         <option value="$PROJECT_DIR$/fract_codes/julia.cl" />
         <option value="$PROJECT_DIR$/fract_codes/mandelbar.cl" />
         <option value="$PROJECT_DIR$/buttons.c" />
-        <option value="$PROJECT_DIR$/go_julia.c" />
-        <option value="$PROJECT_DIR$/go_mandelbar.c" />
-        <option value="$PROJECT_DIR$/go_mandelbrot.c" />
-        <option value="$PROJECT_DIR$/go_ship.c" />
         <option value="$PROJECT_DIR$/init_cl.c" />
         <option value="$PROJECT_DIR$/zoom.c" />
         <option value="$PROJECT_DIR$/main.c" />
@@ -145,6 +158,10 @@
         <option value="$PROJECT_DIR$/service.c" />
         <option value="$PROJECT_DIR$/fract_codes/mandelbrot.cl" />
         <option value="$PROJECT_DIR$/arrows.c" />
+        <option value="$PROJECT_DIR$/go_ship.c" />
+        <option value="$PROJECT_DIR$/go_julia.c" />
+        <option value="$PROJECT_DIR$/go_mandelbar.c" />
+        <option value="$PROJECT_DIR$/go_mandelbrot.c" />
       </list>
     </option>
   </component>
@@ -256,12 +273,12 @@
       <workItem from="1570182172349" duration="6105000" />
       <workItem from="1570196637776" duration="13743000" />
       <workItem from="1570224692461" duration="93000" />
-      <workItem from="1570280723612" duration="1001000" />
+      <workItem from="1570280723612" duration="1216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93211000" />
+    <option name="totallyTimeSpent" value="93426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="601" y="23" width="1746" height="1337" extended-state="0" />
@@ -439,38 +456,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go_mandelbar.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_julia.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_mandelbrot.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/init_cl.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go_ship.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -523,6 +512,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_ship.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_julia.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_mandelbar.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go_mandelbrot.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
         </state>
       </provider>
     </entry>
